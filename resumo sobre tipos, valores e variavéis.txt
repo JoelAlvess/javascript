@@ -1,0 +1,47 @@
+Resumo de js
+
+Tipos, valores e variavéis:
+
+O que são tipos?
+
+Tipos são os valores  (dados) aceitos em uma linguagem de programação.
+
+Tipos em js são: primitivos e objetos
+
+Primitivos: número, string (texto) e booleanos. Os valores null e undefined são considerados primitivos
+
+Objetos: São um conjunto de propriedade em que cada propriedade tem um nome e um valor
+
+Obs: um tipo especial de objeto são as arrays e funções.
+
+funções são bloco de códigos executavéis que retornam um valor e arrays são listas numeradas.
+
+FUNÇÃO CONTRUTORA (new) é uma funçao escrita para iniciar um obejto.
+
+Js é uma linguagem orientada a objetos, isto é, os próprios tipos definem métodos para trabalhar com valores.
+
+Não podemos chamar métodos em null e undefined
+
+As variavéis em js são não tipadas, isto é, podemos atribuir um valor de qualquer tipo a uma variavél e depois alterar esse valor.
+
+NÚMEROS:
+
+JS trata números com ponto fluante e sem da mesma forma.
+
+Literal numérico é quando um número aparece diretamente no programa.
+
+Um literal com ponto flutuuante  é um número real com uma parte inteira seguida de um ponto e a parte fracionária.
+
+DATAS E HORAS:
+
+usando a construtota date permite criar objetos que represetam data e hora
+para pegar a data  atual new Date();
+
+TEXTO:
+
+String: Um sequência de caractere unicode. As strings em js são um tipo usado para representar textos
+Para introduzir uma string em um programa js usamos aspas simples '' ou duplas ""
+
+VALORES BOOLEANOS: Um valor booleano representa verdadeiro ou falso. As palavras reservadas são false e true.
+
+NULL: é uma  palavra-chave reservada , avaliada com um valor especial, normalmente usada para indicar a ausência de valor.

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18pt;
+        }
+
+        h1{
+            padding: 15px;
+            margin: 20px;
+            border: 1px solid #ccc;
+        }
+
+        div{
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vou modificar o contéudo desse título com <strong>DOM</strong>.</h1>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        var d = window.document.querySelector('#msg')
+        d.style.background = 'red'
+        d.style.color = 'white'
+    </script>
+
+</body>
+</html>

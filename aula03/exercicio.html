@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios</title>
+    <style>
+        #testando{
+            font: normal 18pt 'Arial';
+            text-align: center;
+            background: rgba(172, 255, 47, 0.442);
+            color: rgb(0, 0, 0);
+            line-height: 150px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="testando">
+        interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('testando')
+
+        a.addEventListener ('click', clicar)
+        a.addEventListener ('mouseenter', enter)
+        a.addEventListener ('mouseout', out)
+
+        function clicar() {
+           a.innerText = ' Clicou! '
+           a.style.background = 'red'
+        }
+
+        function enter() {
+            a.innerText =  'Entrou'
+        }
+
+        function out()  {
+            a.innerText = 'Saiu'
+        }
+    </script>
+</body>
+</html>
