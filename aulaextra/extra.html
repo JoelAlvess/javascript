@@ -9,30 +9,61 @@
             font: normal 17pt 'Arial'
         }
 
-        .container{
-            padding: 15px;
+        h1{
+            text-align: center;
+        }
+
+        .container{ 
+            box-shadow: 3px 3px 5px black;
+            background-color: #ccc;
+            padding: 10px;
             margin: auto;
-            width: 500px;
-            height: 400px;
+            box-sizing: border-box;
+            padding: 15px;
+            width: 300px;
+            height: 500px;
             border: 1px solid #0b0606;
         }
 
-        span{
+
+        .name{
             padding: 10px;
             margin: 10px;
         }
 
         #name-user{
+            margin: 15px;
+        }
+        
+        #name-user{
             height: 30px;
         }
-
+        
         .calculator{
-            margin-top: 20px;
+            margin: 20px;
+            padding: 20px;
+            line-height: 20px;
         }
-
+        
         #res{
             margin: 25px;
             text-align: center;
+        }
+
+        .btn-confirmr{
+            text-transform: uppercase;
+            border: none;
+            background-color: rgba(0, 255, 255, 0.584);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #number01 , #number02{
+            margin: 10px;
+        }
+
+        .sum{
+            font-size: 15pt;
         }
     </style>
 
@@ -40,13 +71,14 @@
 <body>
     <h1>Meu primeiro programa</h1>
     <div class="container">
-        <span>Name:</span>
+        <span class="name">Name:</span>
         <input type="text" name="name" id="name-user" placeholder="digite seu nome">
-        <input type="button" value="confirmar" onclick="confirmr()">
+        <input type="button" value="confirmar" onclick="confirmr()" class="btn-confirmr">
         <div class="calculator">
-            <input type="number" name="number01" id="number01" placeholder="Digite um valor"> +
-            <input type="number" name="number02" id="number02" placeholder="Digite um valor">
-            <input type="button" value="Somar" onclick="sum()">
+            <input type="number" name="number01" id="number01" placeholder="Digite um valor">
+            <span class="sum">+</span>
+            <input type="number" name="number02" id="number02" placeholder="Digite um valor"> 
+            <input type="button" value="Somar" onclick="sum()" class="btn-confirmr">
             <div id="res">
                 Resultado:
             </div>
@@ -54,12 +86,14 @@
     </div>
 
     <script>
-        var user
-
+        var user   
+        
         function confirmr() {
             user = document.querySelector('#name-user').value
+            var clic = document.querySelectorAll('.btn-confirmr')[0]
+            clic.style.background = 'green'
         }
-
+        
         function sum() {
             var tn1 = document.getElementById('number01')
             var tn2 = document.getElementById('number02')
@@ -67,7 +101,9 @@
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var sum = n1 + n2
-            res.innerHTML = `${user}  o resultado da operação entre ${n1} e ${n2} é ${sum}`
+            var clic_sum = document.querySelectorAll('.btn-confirmr')[1]
+            clic_sum.style.background = 'green'
+            res.innerHTML = `${user}  o resultado entre ${n1} e ${n2} é ${sum}`
         }
     </script>
 </body>
