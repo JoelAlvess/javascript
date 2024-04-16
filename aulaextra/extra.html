@@ -71,14 +71,14 @@
 <body>
     <h1>Meu primeiro programa</h1>
     <div class="container">
-        <span class="name">Name:</span>
+        <span class="name">Nome:</span>
         <input type="text" name="name" id="name-user" placeholder="digite seu nome">
-        <input type="button" value="confirmar" onclick="confirmr()" class="btn-confirmr">
+        <input type="button" value="confirmar" class="btn-confirmr" id="btn">
         <div class="calculator">
             <input type="number" name="number01" id="number01" placeholder="Digite um valor">
             <span class="sum">+</span>
             <input type="number" name="number02" id="number02" placeholder="Digite um valor"> 
-            <input type="button" value="Somar" onclick="sum()" class="btn-confirmr">
+            <input type="button" value="Somar" class="btn-confirmr" id="btn-sum">
             <div id="res">
                 Resultado:
             </div>
@@ -86,25 +86,50 @@
     </div>
 
     <script>
-        var user   
-        
+        var clic_confirmr = document.getElementById('btn')
+        var clic_sum = document.getElementById('btn-sum')
+
+        clic_confirmr.addEventListener ('click', confirmr)
+        clic_sum.addEventListener('click' , sumr)
+
         function confirmr() {
-            user = document.querySelector('#name-user').value
-            var clic = document.querySelectorAll('.btn-confirmr')[0]
-            clic.style.background = 'green'
+            clic_confirmr.style.background = 'green'
         }
-        
-        function sum() {
-            var tn1 = document.getElementById('number01')
-            var tn2 = document.getElementById('number02')
+
+        function sumr() {
+            var user = document.querySelector('#name-user').value
+            var text1 = document.getElementById('number01').value
+            var text2 = document.getElementById('number02').value
             var res = document.getElementById('res')
-            var n1 = Number(tn1.value)
-            var n2 = Number(tn2.value)
+            var n1 = Number(text1)
+            var n2 = Number(text2)
             var sum = n1 + n2
-            var clic_sum = document.querySelectorAll('.btn-confirmr')[1]
             clic_sum.style.background = 'green'
-            res.innerHTML = `${user}  o resultado entre ${n1} e ${n2} é ${sum}`
+            res.innerHTML = `${user} o resultado entre ${n1} e ${n2} é ${sum}`
         }
-    </script>
+
+        
+    
+
+        // var user   
+        
+        // function confirmr() {
+        //     user = document.querySelector('#name-user').value
+        //     var clic = document.querySelectorAll('.btn-confirmr')[0]
+        //     clic.style.background = 'green'
+        // }
+        
+        // function sum() {
+        //     var tn1 = document.getElementById('number01')
+        //     var tn2 = document.getElementById('number02')
+        //     var res = document.getElementById('res')
+        //     var n1 = Number(tn1.value)
+        //     var n2 = Number(tn2.value)
+        //     var sum = n1 + n2
+        //     var clic_sum = document.querySelectorAll('.btn-confirmr')[1]
+        //     clic_sum.style.background = 'green'
+        //     res.innerHTML = `${user}  o resultado entre ${n1} e ${n2} é ${sum}`
+        // }
+    // </script>
 </body>
 </html>
