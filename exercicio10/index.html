@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando</title>
+</head>
+<body>
+    <h1>Aprendendo a usar <strong>if</strong></h1>
+    <h2>Vamos conferir se você é ou não maior de 18 anos.</h2>
+    <span>Digite sua idade</span>
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="Enviar" id="enviar">
+
+    <div id="text">
+
+    </div>
+    <script>
+        var conferir = document.getElementById('enviar')
+        conferir.addEventListener('click', conferirIdade)
+        function conferirIdade() {
+            var tIdade = document.getElementById('idade')
+            var nIdade = Number(tIdade.value)
+            var text = document.getElementById('text')
+
+            if(nIdade > 18) {
+                text.innerHTML = `Você tem ${nIdade} anos e de acordo com a constituição brasileira é adulto(a)`
+            }else {
+                text.innerHTML = `Você tem ${nIdade} anos e de acordo com a constituição brasileira não é adulto(a)`
+            }
+
+            if(nIdade < 0) {
+                text.innerHTML = `Você inseriu um dado inválido. Por favor insira sua idade  corretamente.`
+            }
+        }
+    </script>
+</body>
+</html>

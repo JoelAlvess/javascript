@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praticando HTML, CSS E JS</h1>
+    <div id="problem">
+        <p class="text">Faça uma programa que receba um valor e mostre se é par ou ímpar</p>
+        <input type="text" name="number" id="number">
+        <input type="button" value="Verificar" id="check">
+    </div>
+
+    <div id="response">
+
+    </div>
+
+    <script>
+        var number_check = document.querySelector('#number')
+        var clic = document.querySelector('#check')
+        var response_parImpar  = document.querySelector('#response')
+
+        clic.addEventListener('click', analisar)
+        function analisar(){
+            var number_parImpar = Number(number_check.value)
+            if(number_parImpar % 2 == 0){
+                response_parImpar.innerHTML = `O número ${number_parImpar} é par`
+            }else{
+                response_parImpar.innerHTML = `O número ${number_parImpar} é ímpar`
+            }
+        }
+    </script>
+</body>
+</html>

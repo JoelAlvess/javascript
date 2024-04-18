@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #container{
+            display: flex;
+        }
+        .note{
+            display:flex;   
+            margin-bottom: 15px;
+        }
+
+        #problem{
+            width: 250px;
+            height: 250px;
+            padding: 25px;
+            position: relative;
+            border: 1px solid black;
+            margin: auto auto 10px auto;
+        }
+
+        #notes{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #response{
+            margin: auto;
+            width: 200px;
+            height: 80px;
+            border: 1px solid black;
+        }
+
+        .situacao{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+        }
+
+        h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de <strong>MÉDIA</strong></h1>
+
+    <div id="container">
+        <div id="problem">
+            <h4>Informe suas três notas</h4>
+            <div id="notes">
+                <input type="number" name="note1" id="note1" class="note">
+                <input type="number" name="note2" id="note2" class="note">
+                <input type="number" name="note3" id="note3" class="note">
+                <input type="button" value="Calcular média" class="checar">
+            </div>
+        </div>
+    </div>
+    <div id="response">
+        <p class="situacao">
+        </p>
+    </div>
+
+    <script>
+        var btn = document.querySelector('.checar')
+        var situacao = document.querySelector('.situacao')
+        
+        
+        btn.addEventListener('click', verificar)
+        
+        function verificar() {
+            var number01 = Number(document.querySelector('#note1').value)
+            var number02 = Number(document.querySelector('#note2').value)
+            var number03 = Number(document.querySelector('#note3').value)
+
+            var m = (number01+number02+number03) / 3
+            
+            if( m >= 7){
+                situacao.innerHTML = `Sua média foi ${m.toFixed(2)}. Aprovado`
+            }else{
+                    situacao.innerHTML = `Sua média foi ${m.toFixed(2)}. Reprovado`
+            }
+        }
+
+    </script>
+</body>
+</html>

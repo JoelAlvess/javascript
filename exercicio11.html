@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+    <style>
+        body{
+           font-family: Arial, Helvetica, sans-serif;
+            background-color: peachpuff;
+        }
+
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        #alfabeto{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício</h1>
+    <h2>
+        Vamos tentar desenvolver exercícios somente usando if
+    </h2>
+
+    <div class="form">
+            <p class="">Vamos ver se a letra informada é vogal ou consoante</p>
+           <input type="text" name="alfabeto" id="alfabeto" placeholder="
+           digite somente uma letra"> 
+           <input type="button" value="verificar" id="verificar">
+    </div>
+
+    <div id="resultado">
+
+    </div>
+    <script>
+        var btn = document.querySelector('#verificar')
+        btn.addEventListener('click', verificar)
+        function verificar() {
+            var letra = document.querySelector('#alfabeto').value
+            var resultado = document.querySelector('#resultado')
+            if(letra == 'a'|| letra == 'e' || letra =='i' ||letra == 'o' || letra == 'u') {
+                resultado.innerHTML = `A letra ${letra} é vogal`
+            }else{
+                resultado.innerHTML = `É ${letra} consoannte`
+            }
+
+        }
+    </script>
+</body>
+</html>
