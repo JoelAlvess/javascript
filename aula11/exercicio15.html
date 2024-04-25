@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: rgba(190, 10, 10, 0.503);
+            font-family: cursive;
+            font-size: 2em;
+        }
+
+        #container-clock{
+            position: relative;
+            border: 1px solid white;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex; 
+            width: 800px;
+            height: 380px;
+        }
+
+        .clock{ 
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle{
+            background-color: wheat;
+            box-shadow: 5px -5px 5px black;
+            padding: 55px;
+            margin: 25px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container-clock">
+        <div class="clock"> 
+            <div id="hours" class="circle" ></div>
+            <div id="minute"  class="circle"></div>
+            <div id="secounds"  class="circle"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        function upHours(){
+            var hours = new Date()
+            var hours = hours.getHours()
+            var min = new Date()
+            var min = min.getMinutes()
+            var sec = new Date()
+            var sec = sec.getSeconds()
+            
+            var hours = document.querySelector('#hours').textContent = hours
+            var hours = document.querySelector('#minute').textContent = min
+            var hours = document.querySelector('#secounds').textContent = sec
+ 
+        }
+        
+        setInterval(upHours, 1000)
+        </script>
+</body>
+</html>
