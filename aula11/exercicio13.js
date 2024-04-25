@@ -1,0 +1,29 @@
+var now = new Date()
+var weekDay = now.getDay()
+var hours = new Date
+var hours = hours.getHours()
+switch(weekDay) {
+    case 0:
+        console.log(`Domingo, ${hours}`)
+        break
+    case 1: 
+         console.log(`Segunda-Feira`)
+         break
+    case 2: 
+         console.log(`Terça-Feira`)
+         break
+    case 3: 
+         console.log(`Quarta-Feira`)
+         break
+    case 4: 
+         console.log(`Quinta-Feira, ${hours}`)
+         break
+    case 5: 
+         console.log(`Sexta-Feira`)
+         break
+    case 6: 
+         console.log(`Sábado`)
+         break
+    default:
+        console.log(`Esse dia não existe`)
+}
