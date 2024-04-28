@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #container{
+            margin: auto;
+            position: relative;
+            width: 350px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        #form-number{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .number{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="form-number">
+            <input type="number" name="number" id="number01" class="number">
+            <input type="number" name="number" id="number02" class="number">
+            <input type="number" name="number" id="number03" class="number">
+            <input type="button" value="verificar" id="btn">
+        </div>
+    </div>
+
+    <div class="result"></div>
+
+    <script>
+
+        var btns = document.querySelector('#btn')
+        btns.addEventListener('click', triangle)
+
+        function triangle() {
+            var results = document.querySelector('.result')
+            var side01 = Number(document.querySelector('#number01').value)
+            var side02 = Number(document.querySelector('#number02').value)
+            var side03 = Number(document.querySelector('#number03').value)
+
+            if( side01 === 0 && side02 === 0 && side03 === 0){
+                results.textContent = `Os lados fornecidos NÃO formam um TRIÂNGULO`
+            }   else if(side01 + side02 <= side03 || side02 + side03 <= side01 || side01 + side03 <= side02)
+                    results.textContent = `Os lados fornecidos NÃO formam um TRIÂNGULO`
+                    else if(side01 == side02 && side02 == side03 & side01 == side03){
+                        results.textContent = `Os lados fornecidos formam um TRIÂNGULO EQUILÁTERO.`
+                    }   else if(side01 == side02 || side02 == side03 || side01 == side03){
+                            results.textContent = `Os lados fornecidos formam um TRIÂNGULO ISÓSCELES`
+                    }       else if(side01 != side02 && side02 != side03 && side01 != side03){
+                                results.textContent = `Os lados fornecidos formam um TRIÂNGULO ESCALENO`
+                    }
+        }       
+    </script>
+</body>
+</html>

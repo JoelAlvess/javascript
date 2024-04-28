@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: 1em sans-serif;
+        }
+
+        #container{
+            margin: 10px auto;
+            width: 250px;
+            height: 200px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #number{
+            margin-left: 5px;
+        }
+
+        .btn{
+            margin: 10px;
+        }
+
+        .result{
+            margin: auto;
+            width: 180px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="form">
+            <input type="number" name="number" id="number"> 
+            <input type="button" value="verificar" class="btn">
+        </div>
+    </div>
+    <div class="result"></div>
+
+    <script>
+        var results = document.querySelector('.result')
+        var btns = document.querySelector('.btn')
+        btns.addEventListener('click', parImpar)
+
+        function parImpar() {
+            var number_user = Number(document.querySelector('#number').value)
+            if (number_user % 2 == 0){
+                results.textContent = `O número ${number_user} é par`
+            }else{
+                results.textContent = `O número ${number_user} é ímpar`
+            }
+        }
+    </script>
+</body>
+</html>

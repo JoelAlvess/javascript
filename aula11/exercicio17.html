@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            margin: 10px auto;
+            width: 320px;
+            height: 320px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .form-numbers{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .number{
+            margin: 15px;
+        }
+
+        #btn{
+            margin: 15px;
+        }
+
+        .result{
+            margin: auto;
+            padding: 15px;
+            line-height: 10px;
+            text-align: center;
+            border: 1px solid black;
+            width: 250px;
+            height: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="form-numbers">    
+                    <input type="number" name="Number" id="number01" class="number">
+                    <input type="number" name="Number" id="number02" class="number">
+                    <input type="number" name="Number" id="number03" class="number">
+                    <input type="button" value="Comparar" id="btn">
+        </div>
+    </div>
+
+    <div class="result"></div>
+
+    <script>
+        var results = document.querySelector('.result')
+        var btns = document.querySelector('#btn')
+
+        btns.addEventListener('click', comparison)
+
+        function comparison() {
+            var n1 = Number(document.querySelector('#number01').value)
+            var n2 = Number(document.querySelector('#number02').value)
+            var n3 = Number(document.querySelector('#number03').value)
+
+            if(n1 > n2 && n1 > n3){
+                results.textContent = `${n1} é o maior número`
+            }else if(n2 > n1 && n2 > n3){
+                results.textContent = `${n2} é o maior número`
+            }else if(n3 > n1 && n3 > n2){
+                results.textContent = `${n3} é o maior número`
+            }else{
+                results.textContent = `${n1}, ${n2}, ${n3} são iguais`
+            }
+        }
+    </script>
+</body>
+</html>

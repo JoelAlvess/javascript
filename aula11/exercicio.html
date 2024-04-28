@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container{
+            margin: auto;
+            width: 250px;
+            height: 250px;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        .forms{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .result{
+            text-align: center;
+            margin: 15px auto;
+            width: 250px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+    <title>Condicionais</title>
+</head>
+<body>
+    <!-- Faça um script que verifique se uma letra digitada num campo de input é vogal ou consoante. -->
+    <!-- Estrutura HTML -->
+    <div class="container">
+        <div class="forms">
+            <input type="text" name="Digite uma letra" id="letter">
+            <input type="button" value="Verificar" id="btn">
+        </div>
+    </div>
+
+    <div class="result">
+
+    </div>
+    <script>
+        var result = document.querySelector('.result')
+        var btns = document.querySelector('#btn')
+
+        btns.addEventListener('click', checking)
+
+        function checking() {
+            var user_letter = document.querySelector('#letter').value.toLowerCase()
+            if(user_letter == 'a' || user_letter == 'e' || user_letter == 'i' || user_letter == 'o' || user_letter == 'u'){
+                result.textContent = `A letra ${user_letter} é vogal.`
+            }else{
+                result.textContent = `A letra ${user_letter} não é vogal.`
+            }
+        }
+    </script>
+</body>
+</html>
