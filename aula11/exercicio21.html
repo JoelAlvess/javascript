@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Saudações</h1>
+    <input type="text" name="" id="name-user">
+    <input type="button" value="Enviar" class="send">
+
+    <script>
+        var btns = document.querySelector('.send')
+        btns.addEventListener('click', welcome)
+        function welcome(){
+            var name_user = document.querySelector('#name-user').value
+            alert(`Seja bem vindo! ${name_user}`)
+        }
+
+    </script>
+</body>
+</html

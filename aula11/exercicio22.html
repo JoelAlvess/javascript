@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <input type="number" name="" id="number01"> +
+    <input type="number" name="" id="number02">
+    <input type="button" value="calcular" class="sum">
+
+    <script>
+        document.querySelector('.sum').addEventListener('click', sum)
+
+        function sum(){
+            var n1 = Number(document.querySelector('#number01').value)
+            var n2 = Number(document.querySelector('#number02').value)
+            var result = n1 + n2
+            document.writeln(`A soma de ${n1} mais ${n2} é ${result}`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Treinando lógica</h1>
+
+    <p>Esse programa mostra o dobro, triplo e raíz quadrada de um número</p>
+
+    <input type="number" name="" id="number">
+    <input type="button" value="calcular" class="btn">
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', misson)
+
+        function misson(){
+            var number = Number(document.querySelector('#number').value)
+
+            let dobro
+            let triplo
+            let raizquadrada
+
+            dobro = number * 2
+            triplo = number * 3
+            raizquadrada = Math.sqrt(number)
+
+            document.write(`O dobro de ${number} é ${dobro}; o triplo é ${triplo} e a raíz quadrada é ${raizquadrada}`)
+        }
+    </script>
+</body>
+</html>

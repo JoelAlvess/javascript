@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcule a média entre dois números</h1>
+    <input type="number" name="" id="number01">
+    <input type="number" name="" id="number02">
+
+    <input type="button" value="calcular" class="btn">
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', media)
+
+        function media(){
+            var n1 = Number(document.querySelector('#number01').value)
+            var n2 = Number(document.querySelector('#number02').value)
+
+            let m
+
+            m = (n1+n2)/2
+
+            document.write(`A média entre ${n1} e ${n2} é ${m}`)
+        }
+    </script>
+</body>
+</html>

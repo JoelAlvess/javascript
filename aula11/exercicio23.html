@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sucessor e Antecessor</h1>
+
+    <span>Esse programa mostra o sucessor e antecessor</span>
+
+    <input type="number" name="" id="number">
+    <input type="button" value="calcular" class="btn">
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', as)
+
+        function as(){
+            var n = Number(document.querySelector('#number').value)
+
+            let sucessor
+            let antecessor
+
+            sucessor = n + 1
+            antecessor = n - 1
+
+            document.write(`O sucessor de ${n} é ${sucessor} e o antecessor é ${antecessor}`)
+        }
+    </script>
+</body>
+</html>
