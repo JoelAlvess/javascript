@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto na gasosa</title>
+    <style>
+        h1{
+            text-align: center;
+            font-variant: small-caps;
+        }
+
+        #container{
+            margin: 10px auto;
+            width: 350px;
+            height: 200px;
+            border: 1px solid  black;
+            position: relative;
+        }
+
+        #form{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #produto, #litros{
+            margin: 5px;
+        }
+
+        .btn{
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: greenyellow;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: blue;
+        }
+
+        .resposta{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            line-height: 7;
+            margin: auto;
+            width: 250px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra seu desconto</h1>
+    <div id="container">
+        <div id="form">
+            <input type="text" name="combustivel" id="produto" placeholder="Qual combustível?">
+            <input type="number" name="litros" id="litros" placeholder="Quantos litros?">
+            <input type="button" value="enviar" class="btn">
+        </div>
+    </div>
+
+    <div class="resposta"></div>
+    <script>
+        document.querySelector('.btn').addEventListener('click', desconto)
+
+        function desconto(){
+            let resposta = document.querySelector('.resposta')
+            let produto = document.querySelector('#produto').value 
+            let litros = Number(document.querySelector('#litros').value)
+            let dsct
+            let pagar
+            
+            if(produto == 'gasolina' && litros <= 20){
+                dsct = 2.50*litros*(4/100)
+                pagar = 2.50*litros - dsct
+                resposta.innerHTML = `Valor a pagar é ${pagar.toFixed(2)}`
+                }else if(produto == 'gasolina' && litros > 20){
+                    dsct = 2.50*litros*(5/100)
+                    pagar = 2.50*litros - dsct
+                    resposta.innerHTML = `Valor a pagar é ${pagar.toFixed(2)}`
+            }       else if(produto == 'alcool' && litros <= 20){
+                        dsct = 1.90*litros*(3/100)
+                        pagar = 1.90*litros - dsct
+                        resposta.innerHTML = `Valor a pagar é ${pagar.toFixed(2)}`
+            }               else if(produto == 'alcool' && litros > 20){
+                                dsct = 1.90*litros*(5/100)
+                                pagar = 1.90*litros - dsct
+                                resposta.innerHTML = `Valor a pagar é ${pagar.toFixed(2)}`
+            }
+        }
+    </script>
+</body>
+</html>

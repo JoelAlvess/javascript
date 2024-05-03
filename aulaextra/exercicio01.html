@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Saudações</h1>
+
+    <div id="container">
+        <div id="forms">
+            <input type="text" name="turno" id="turno-user">
+            <input type="button" value="Enviar" class="btn">
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', welcome)
+        function welcome(){
+            var turno_user = document.querySelector('#turno-user').value
+            switch(turno_user){
+                case 'Matutino':
+                    alert(`Seu turno é ${turno_user}. Seja bem vindo e BOM DIA!`)
+                break
+
+                case 'Vespertino':
+                    alert(`Seu turno é ${turno_user}. Seja bem vindo e Boa tarde`)
+                    break
+                case 'Noturno':
+                    alert(`Seu turno é ${turno_user}. Seja bem vindo e BOA NOITE`)
+                    break
+                default:
+                    alert(`Por favor insira um turno válido`)
+            }
+        }
+    </script>
+</body>
+</html>

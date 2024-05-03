@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+
+        #container{
+            margin: 10px auto;
+            padding: 10px;
+            width: 350px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .text{
+            margin: 5px;
+        }
+
+        .btn, .operacionar{
+            margin: 10px;
+        }
+
+        .result{
+            text-align: center;
+            line-height: 5;
+            margin: auto;
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div id="container">
+        <span class="text">Informe dois valores</span>
+        <div id="form">
+            <input type="number" name="number" id="number01">
+            <input type="number" name="number" id="number02">
+            <!-- <input type="button" value="enviar" class="btn"> -->
+        </div>
+        <span class="text">Informe qual operação deseja realizar</span>
+        <input type="text" name="operacao" id="operation">
+        <input type="button" value="enviar" class="operacionar">
+    </div>
+
+    <div class="result"></div>
+
+    <script>
+        // document.querySelector('.btn').addEventListener('click', calculator)
+        document.querySelector('.operacionar').addEventListener('click', calculator)
+
+        function calculator(){
+            var result = document.querySelector('.result')
+            let n1 = Number(document.querySelector('#number01').value)
+            let n2 = Number(document.querySelector('#number02').value)
+            let option = document.querySelector('#operation').value
+            let sum
+            let dif
+            let mult
+            let div
+
+            switch(option){
+                case 'somar':
+                    sum = n1 + n2
+                    result.innerHTML = `A soma entre ${n1} e ${n2} é ${sum}`
+                    break
+                case 'subtração':
+                    dif = n1 -n2
+                    result.innerHTML = `A diferença entre ${n1} e ${n2} é ${dif}` 
+                    break
+                case 'multiplicação':
+                    mult = n1 * n2
+                    result.innerHTML = `O produto entre ${n1} e ${n2} é ${mult}`
+                    break
+                case 'divisão':
+                    div = n1/n2
+                    result.innerHTML = `O quociente entre ${n1} e ${n2} é ${div}`
+                    break
+                default:
+                    result.innerHTML = `Digite uma operação válida`
+            }
+        }        
+
+    </script>
+</body>
+</html>
