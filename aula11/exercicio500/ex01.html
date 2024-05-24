@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #container-forms{
+            width: 50%;
+            height: 250px;
+            border: 1px  solid black;
+        }
+
+        #forms{
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container-forms"> 
+        <div id="forms">
+            <input type="text" name="idade" id="name" placeholder="Informe seu nome">
+            <input type="number" name="idade" id="year" placeholder="Informe sua idade">
+            <input type="button" value="Enviar" id="btns">
+        </div>
+    </div>
+
+    <script>
+        let btns = document.querySelector('#btns')
+        btns.addEventListener('click', saudacoes)
+
+        function saudacoes(){
+            let name = document.querySelector('#name').value
+            let year = Number(document.querySelector('#year').value)
+            alert(`Olá, meu é ${name} e eu tenho ${year} anos`)
+        }   
+    </script>
+</body>
+</html>

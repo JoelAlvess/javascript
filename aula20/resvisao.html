@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resivando</title>
+    <style>
+        .container-forms{
+            width: 520px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        .forms{
+            width: 80%;
+            margin: 15px auto;
+        }
+
+        #n1,#n2{
+            display: block;
+        }
+
+        #btns{
+            margin-top: 15px;
+        }
+
+        .resultado{
+            margin-top: 15px;
+            border: 1px solid black;
+            width: 500px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fazer um programa que soma dois números -->
+    <div class="container-forms">
+        <div class="forms">
+            <input type="number" name="numero" id="n1"> +
+            <input type="number" name="numero" id="n2">
+            <input type="button" value="Somar" id="btns">
+        </div>
+    </div>
+
+    <div class="resultado">
+
+    </div>
+
+    <script>
+        let btns = document.getElementById('btns')
+        btns.addEventListener('click', somar)
+        let resultado = document.querySelector('.resultado')
+
+        function somar(){
+            let n1 = Number(document.getElementById('n1').value)
+            let n2 = Number(document.getElementById('n2').value)
+            
+            let s = n1 * n2
+            
+            resultado.innerHTML = `O produto entre ${n1} e ${n2} é ${s}`
+        }
+    </script>
+</body>
+</html>
